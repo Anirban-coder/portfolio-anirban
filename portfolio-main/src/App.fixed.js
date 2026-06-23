@@ -8,6 +8,8 @@ import {
   FaHtml5, FaJs, FaReact, FaPython, FaGitAlt, FaGoogle, FaJava, FaNodeJs,
 } from 'react-icons/fa';
 import { SiTailwindcss, SiMongodb, SiLeetcode, SiPostman } from 'react-icons/si';
+import Strands from './components/Strands/Strands';
+import CertificateBook from './components/CertificateBook/CertificateBook';
 
 /* ─────────────────────────────────────────────
    Typewriter Hook
@@ -213,36 +215,18 @@ export default function Portfolio() {
   ]);
 
   const [certificates, setCertificates] = useState([
-    { id:1,
-      name:'Introduction to Data Analytics on Google Cloud',
-      issuer:'Google Cloud', date:'Jun 2025', category:'cloud',
-      image:'https://cdn.qwiklabs.com/URJ0BFWgzlLBkCO6kSOyXGd3Idd44d6tC4Dqn6SKeiw%3D',
-      link:'https://www.skills.google/public_profiles/b131287b-f220-4aa3-8b4e-116c192d8b5b/badges/16364840' },
-    { id:2,
-      name:'Develop Gen AI Apps with Gemini and Streamlit',
-      issuer:'Google', date:'Nov 2025', category:'ai',
-      image:'https://cdn.qwiklabs.com/R%2BYhbP40DQcgaBNwV5nSLyIehXVx2j9KZslV6rCb9K4%3D',
-      link:'https://www.skills.google/public_profiles/2183bd9e-6bb3-4ff5-8013-f244b8d87519/badges/20023735' },
-    { id:3,
-      name:'Preparing for Professional Cloud Architect Journey',
-      issuer:'Google Cloud', date:'2024', category:'cloud',
-      image: null,
-      link:'https://www.cloudskillsboost.google/public_profiles/b131287b-f220-4aa3-8b4e-116c192d8b5b/badges/14006295' },
-    { id:4,
-      name:'Google Cloud Fundamentals: Core Infrastructure',
-      issuer:'Google Cloud', date:'2024', category:'cloud',
-      image: null,
-      link:'https://www.cloudskillsboost.google/public_profiles/b131287b-f220-4aa3-8b4e-116c192d8b5b/badges/12044636' },
-    { id:5,
-      name:'Prompt Design in Agent Platform',
-      issuer:'Google', date:'2025', category:'ai',
-      image: null,
-      link:'https://www.skills.google/public_profiles/2183bd9e-6bb3-4ff5-8013-f244b8d87519/badges/19997037' },
-    { id:6,
-      name:'DSA Certification',
-      issuer:'Udemy', date:'2023', category:'dsa',
-      image: null,
-      link: '#' },
+    { id: 1, name: 'Create Your First Gemini Enterprise Application', issuer: 'Google Cloud', date: 'Jun 2026', category: 'ai', image: 'https://cdn.qwiklabs.com/%2FoLo60xg2CMZB%2BWs7JLFlQhAVVn7ZXEVsiHws3APcHY%3D', link: 'https://www.skills.google/public_profiles/b131287b-f220-4aa3-8b4e-116c192d8b5b/badges/24729658' },
+    { id: 2, name: 'Enterprise Agents and Use Cases', issuer: 'Google Cloud', date: 'Jun 2026', category: 'ai', image: 'https://cdn.qwiklabs.com/iClTREM6%2BUB9bElfQ3Wwsr4Q5s2Z7UL6Hg9yqLkoa7Y%3D', link: 'https://www.skills.google/public_profiles/b131287b-f220-4aa3-8b4e-116c192d8b5b/badges/24729590' },
+    { id: 3, name: 'Google Cloud Fundamentals: Core Infrastructure', issuer: 'Google Cloud', date: 'Jun 2026', category: 'cloud', image: 'https://cdn.qwiklabs.com/83QQHQTB9tsv1DnS71b5iJWq0Qsqjcgf8RMBlJE6m%2BA%3D', link: 'https://www.skills.google/public_profiles/b131287b-f220-4aa3-8b4e-116c192d8b5b/badges/25017821' },
+    { id: 4, name: 'Agent Fundamentals', issuer: 'Google Cloud', date: 'May 2026', category: 'ai', image: 'https://cdn.qwiklabs.com/d7fgl5Am8p0NbqK9QhS4%2FDYPRBDMSwU6392ifq0p7UY%3D', link: 'https://www.skills.google/public_profiles/b131287b-f220-4aa3-8b4e-116c192d8b5b/badges/24562334' },
+    { id: 5, name: 'Introduction to AI Agents', issuer: 'Google Cloud', date: 'May 2026', category: 'ai', image: 'https://cdn.qwiklabs.com/7xFCpXl6c41wp0LLllrB7TUvpcYBIcfIbPMjsKESjGQ%3D', link: 'https://www.skills.google/public_profiles/b131287b-f220-4aa3-8b4e-116c192d8b5b/badges/24562270' },
+    { id: 6, name: 'Skill Up Summer', issuer: 'Google Cloud', date: 'May 2026', category: 'cloud', image: 'https://cdn.qwiklabs.com/pn28u5yHjwU%2Br5LGxTTF2MNEGBnGHWZ9S5eWiEFAHgs%3D', link: 'https://www.skills.google/public_profiles/2183bd9e-6bb3-4ff5-8013-f244b8d87519/badges/24131027' },
+    { id: 7, name: 'Develop Gen AI Apps with Gemini and Streamlit', issuer: 'Google Cloud', date: 'Nov 2025', category: 'ai', image: 'https://cdn.qwiklabs.com/R%2BYhbP40DQcgaBNwV5nSLyIehXVx2j9KZslV6rCb9K4%3D', link: 'https://www.skills.google/public_profiles/2183bd9e-6bb3-4ff5-8013-f244b8d87519/badges/20023735' },
+    { id: 8, name: 'Prompt Design in Agent Platform', issuer: 'Google Cloud', date: 'Nov 2025', category: 'ai', image: 'https://cdn.qwiklabs.com/K016syGJEESRFO3png1glwKitOKTR%2B18CzOm5tn3oLI%3D', link: 'https://www.skills.google/public_profiles/2183bd9e-6bb3-4ff5-8013-f244b8d87519/badges/19997037' },
+    { id: 9, name: 'Analyze Speech and Language with Google APIs', issuer: 'Google Cloud', date: 'Nov 2025', category: 'ai', image: 'https://cdn.qwiklabs.com/SoxCd9kmS3VeC%2Fe2Tw0sbSoNo%2Fqp2WPgVAmXC78kcqk%3D', link: 'https://www.skills.google/public_profiles/2183bd9e-6bb3-4ff5-8013-f244b8d87519/badges/19908844' },
+    { id: 10, name: 'Deploy and Manage Applications on Google App Engine', issuer: 'Google Cloud', date: 'Nov 2025', category: 'cloud', image: 'https://cdn.qwiklabs.com/rLd1fpUxnhkR5Xp9hv4CW2IVHdxa54f0FTy1kQ7Eex4%3D', link: 'https://www.skills.google/public_profiles/2183bd9e-6bb3-4ff5-8013-f244b8d87519/badges/19904593' },
+    { id: 11, name: 'Level 3: Generative AI', issuer: 'Google Cloud', date: 'Oct 2025', category: 'ai', image: 'https://cdn.qwiklabs.com/eNdZJT5MeYt6TqgsDvDuqyfgItkHfqLqlDs6ggJr%2BYA%3D', link: 'https://www.skills.google/public_profiles/2183bd9e-6bb3-4ff5-8013-f244b8d87519/badges/19648739' },
+    { id: 12, name: 'Customer Experience with Google AI Architecture', issuer: 'Google Cloud', date: 'Jul 2025', category: 'ai', image: 'https://cdn.qwiklabs.com/qVwoOl6utv3cpeJRx8Kiz3EFQ9WJuF%2BhCZ4Jz6MpSBE%3D', link: 'https://www.skills.google/public_profiles/b131287b-f220-4aa3-8b4e-116c192d8b5b/badges/16984188' },
   ]);
 
   const skills = [
@@ -488,6 +472,26 @@ export default function Portfolio() {
         <div className="orb orb-purple w-[500px] h-[500px] top-[-10%] left-[-10%] float-anim"/>
         <div className="orb orb-cyan   w-[400px] h-[400px] bottom-[-5%] right-[-8%] float-anim-2"/>
         <div className="orb orb-pink   w-[300px] h-[300px] top-[40%] left-[40%] opacity-40 float-anim-3"/>
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <div className="sticky top-0 h-screen w-full">
+            <Strands
+              colors={["#06B6D4", "#8B5CF6", "#EC4899"]}
+              count={4}
+              speed={0.35}
+              amplitude={0.9}
+              waviness={1.2}
+              thickness={0.6}
+              glow={1.8}
+              taper={2}
+              spread={1.2}
+              intensity={0.45}
+              saturation={1.5}
+              opacity={0.25}
+              scale={2.0}
+              glass={false}
+            />
+          </div>
+        </div>
         <Particles/>
 
         <div ref={heroRef} className={`relative z-10 max-w-6xl w-full flex flex-col md:flex-row items-center gap-16 reveal ${heroVis?'visible':''}`}>
@@ -781,7 +785,7 @@ export default function Portfolio() {
       </section>
 
       {/* ════════ CERTIFICATES ════════ */}
-      <section id="certificates" className="py-24 px-6 relative overflow-hidden">
+      <section id="certificates" className="pt-24 pb-10 px-6 relative overflow-hidden">
         <div className="orb orb-pink w-80 h-80 left-[-5%] bottom-10 opacity-20"/>
         <div className="max-w-5xl mx-auto">
           <div ref={certRef} className={`reveal ${certVis?'visible':''}`}>
@@ -801,47 +805,10 @@ export default function Portfolio() {
             </div>
           )}
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {certificates.map((c,i)=>(
-              <div key={c.id}
-                className={`cert-card glass rounded-2xl p-5 border flex items-center gap-4 reveal delay-${Math.min((i+1)*100,600)} ${certVis?'visible':''}`}
-                style={{borderColor:'var(--border)'}}
-                onMouseEnter={()=>setCursorBig(true)} onMouseLeave={()=>setCursorBig(false)}>
-
-                {/* Badge Image or Fallback */}
-                <BadgeIcon image={c.image} category={c.category} alt={c.name}/>
-
-                {/* Content */}
-                <div className="flex-1 min-w-0">
-                  {c.link!=='#' ? (
-                    <a href={c.link} target="_blank" rel="noreferrer"
-                      className="font-semibold text-sm leading-snug block mb-1 hover:text-cyan-400 transition-colors"
-                      style={{color:'var(--text)'}}>
-                      {c.name}
-                      <ExternalLink size={11} className="inline ml-1 opacity-50"/>
-                    </a>
-                  ) : (
-                    <span className="font-semibold text-sm leading-snug block mb-1" style={{color:'var(--text)'}}>{c.name}</span>
-                  )}
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <span className="text-xs text-purple-400 font-medium">{c.issuer}</span>
-                    {c.date && <span className="text-xs" style={{color:'var(--text-3)'}}>· {c.date}</span>}
-                    {c.link!=='#' && <CheckCircle size={12} className="text-green-400"/>}
-                  </div>
-                </div>
-
-                {isAdmin && (
-                  <button onClick={()=>setCertificates(certificates.filter(cc=>cc.id!==c.id))}
-                    className="p-1.5 bg-red-500/70 hover:bg-red-500 text-white rounded-full transition-all flex-shrink-0">
-                    <Trash2 size={13}/>
-                  </button>
-                )}
-              </div>
-            ))}
-          </div>
+          <CertificateBook certificates={certificates} />
 
           {/* Google Cloud profile links */}
-          <div className={`mt-10 flex flex-wrap justify-center gap-4 reveal delay-600 ${certVis?'visible':''}`}>
+          <div className={`mt-6 flex flex-wrap justify-center gap-4 reveal delay-600 ${certVis?'visible':''}`}>
             <a href="https://www.cloudskillsboost.google/public_profiles/b131287b-f220-4aa3-8b4e-116c192d8b5b"
                target="_blank" rel="noreferrer"
                className="btn-glow glass-light px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2 border hover:border-blue-400/50 transition-all text-blue-400"
@@ -861,7 +828,7 @@ export default function Portfolio() {
       </section>
 
       {/* ════════ CONTACT ════════ */}
-      <section id="contact" className="py-24 px-6 relative overflow-hidden">
+      <section id="contact" className="pt-10 pb-24 px-6 relative overflow-hidden">
         <div className="orb orb-purple w-80 h-80 right-[-6%] bottom-[-5%] opacity-25"/>
         <div className="orb orb-cyan   w-60 h-60 left-[10%] top-[20%] opacity-20"/>
         <div className="max-w-2xl mx-auto">

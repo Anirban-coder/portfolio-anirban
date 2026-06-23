@@ -1,0 +1,64 @@
+/* CertificateBook.css for react-pageflip */
+
+.real-book {
+  margin: 0 auto;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  border-radius: 8px; /* Slightly rounded edges */
+}
+
+.isometric-book-wrapper {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease-out;
+  filter: drop-shadow(0 30px 40px rgba(0,0,0,0.6));
+}
+
+/* Base page wrapper required by react-pageflip */
+.book-page-wrapper {
+  background-color: transparent;
+  display: block;
+}
+
+/* Content area that fills the page */
+.book-page-content {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.05); /* Slight inner shadow */
+}
+
+/* --- THE COVER --- */
+.book-cover {
+  /* Website theme color (dark slate / deep purple) */
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  /* Leather texture overlay */
+  background-image: 
+    url('https://www.transparenttextures.com/patterns/leather.png'),
+    linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  background-blend-mode: multiply;
+  /* Book edge highlight */
+  box-shadow: inset 2px 2px 5px rgba(255,255,255,0.1), inset -2px -2px 5px rgba(0,0,0,0.8);
+  color: white;
+}
+
+/* --- THE WHITE PAPER PAGES --- */
+.book-paper {
+  /* Slightly off-white cream paper color */
+  background-color: #fcfbf9;
+  /* Very faint paper texture */
+  background-image: url('https://www.transparenttextures.com/patterns/aged-paper.png');
+  background-blend-mode: multiply;
+  color: #333;
+  /* Page shadow at the spine */
+  box-shadow: inset 5px 0 15px rgba(0,0,0,0.05);
+}
+
+/* Fix for react-pageflip internal hard shadow bleeding */
+.stf__block {
+  border-radius: 4px;
+}
+
+/* Lined paper effect in JSX */
+/* Ensure text stays crisp on the paper */
+.book-paper h3, .book-paper p {
+  text-shadow: 0 1px 1px rgba(255,255,255,0.8);
+}
